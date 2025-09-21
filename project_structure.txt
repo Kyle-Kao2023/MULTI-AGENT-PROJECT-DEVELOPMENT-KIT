@@ -1,0 +1,36 @@
+# VibeCoder Starter (Phase-1) — Cursor Setup Script
+
+## Step 1. 建立專案基礎
+- [ ] 建立新專案資料夾 `vibecoder-starter`
+- [ ] 在專案根目錄建立以下檔案：
+  - `cursorrules`
+  - `requirements.txt`
+  - `.env.example`
+  - `README.md`
+
+## Step 2. 建立專案配置
+- [ ] 建立資料夾 `specs/` 並新增：
+  - `specs/ProjectSpec.yaml`
+
+## Step 3. 建立核心程式結構
+- [ ] 建立資料夾 `graph/utils/` 並新增：
+  - `graph/utils/state_types.py`
+  - `graph/app.py`
+
+- [ ] 建立資料夾 `executors/` 並新增：
+  - `executors/cursor_client.py`
+
+- [ ] 建立資料夾 `cli/` 並新增：
+  - `cli/vibe.py`
+
+## Step 4. 建立 artifacts & 其他資料夾
+- [ ] 建立空資料夾：
+  - `artifacts/`
+  - `agents/`
+  - `gates/`
+
+## Step 5. 安裝依賴
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt

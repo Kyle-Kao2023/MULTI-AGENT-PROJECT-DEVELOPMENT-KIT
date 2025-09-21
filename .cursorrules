@@ -1,0 +1,22 @@
+[context]
+- This is a LangGraph + Cursor based project.
+- Purpose: Build multi-agent workflow for trading system (p1-ns) and app prototyping.
+- Single source of truth is ./specs/ProjectSpec.yaml
+
+[workflow]
+- Default pipeline:
+  START → Planner → Dev → Executor → Gate → END
+- Planner = defines plan
+- Dev = generates/modifies code
+- Executor = run code/tests in Cursor background
+- Gate = check acceptance rules
+- If Gate fails → loop back to Planner
+
+[gates]
+- Trading system: winrate ≥ 70%, mfe ≥ 1%, mae ≤ 0.3%, ≤ 6 trades/day
+- App project: tests ≥ 95% pass, Lighthouse ≥ 90, API contracts valid
+
+[cursor.background]
+- Always run in new branch
+- Steps: branch → edit → test → collect artifacts → open PR
+- Never merge PR if gate fails
