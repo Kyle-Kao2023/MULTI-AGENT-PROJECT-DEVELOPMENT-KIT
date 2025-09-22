@@ -16,7 +16,9 @@ This development kit provides an automated workflow pipeline that transforms nat
 
 ## Architecture
 
-The system follows a structured pipeline:
+The system follows a structured pipeline with multi-agent coordination:
+
+![System Architecture](docs/system-architecture.svg)
 
 ```
 START → Planner → Dev → Executor → Gate → END
