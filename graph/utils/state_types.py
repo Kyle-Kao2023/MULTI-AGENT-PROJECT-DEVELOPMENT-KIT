@@ -1,11 +1,12 @@
-from typing import TypedDict, Optional, Dict, Any
+from typing import TypedDict, Optional, Dict, Any, NotRequired
 
-class P1State(TypedDict, total=False):
+class P1State(TypedDict):
     task: str
-    plan: Optional[str]
-    code_diff: Optional[str]
-    backtest_report: Optional[Dict[str, Any]]
-    pr_url: Optional[str]
-    gate_passed: bool
-    current_step: str
-    error: Optional[str]
+    plan: NotRequired[str]
+    code_diff: NotRequired[str]
+    backtest_report: NotRequired[dict]
+    pr_url: NotRequired[str]
+    gate_passed: NotRequired[bool]
+    current_step: NotRequired[str]
+    job_id: NotRequired[str]
+    correction_suggestion: NotRequired[str]

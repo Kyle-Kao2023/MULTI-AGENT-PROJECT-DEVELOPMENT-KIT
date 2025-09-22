@@ -1,0 +1,4 @@
+# This file is intentionally left blank.
+# It ensures that the 'docs/plan' directory is tracked by Git.
+# In Wave 2, this directory will hold Markdown files of project plans
+# to be ingested into the knowledge base.

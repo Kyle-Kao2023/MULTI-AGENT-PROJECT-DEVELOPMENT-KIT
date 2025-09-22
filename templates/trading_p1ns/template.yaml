@@ -1,0 +1,32 @@
+project:
+  name: "trading-strategy-p1ns"
+  template: "trading_p1ns"
+  goals:
+    - "Implement the p1-ns trading strategy template."
+    - "Develop modules for Regime Detection, SNR/FVG signals, and EV-009 execution."
+    - "Integrate a flexible Risk Hooks system."
+    - "Ensure performance and correctness via a dedicated Backtest Runner."
+
+# --- Acceptance criteria for this template ---
+acceptance:
+  backtest:
+    sample_out_winrate: ">=0.70"
+    mfe_target: ">=0.01"
+    mae_limit: "<=0.003"
+    trades_per_day: "<=6"
+
+# --- AI routing and prompts specific to this template ---
+routing:
+  planner_llm: "gpt-5"
+  dev_llm: "claude-4-sonnet"
+  cost_policy: { prefer: "cheap-first", fallback: "best-quality" }
+
+# --- Dev node prompt override ---
+prompts:
+  dev_node: |
+    You are a quantitative trading systems engineer. Based on the plan, produce the Python module skeletons for the p1-ns trading strategy.
+    - Create a directory structure for the strategy components.
+    - For each component (Regime, SNR-FVG, EV-009, Risk Hooks), create a Python file with a clear interface (function/class stubs), docstrings, and type hints.
+    - Create a main `backtest_runner.py` that imports these components and outlines the backtesting loop logic.
+    - Add minimal unit tests for the interfaces of each component.
+    - Output in "file change list + code snippets" format.

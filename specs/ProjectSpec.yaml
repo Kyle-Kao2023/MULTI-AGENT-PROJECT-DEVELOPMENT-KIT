@@ -2,12 +2,17 @@ project:
   name: vibecoder-demo
   template: trading/p1-ns
   goals:
-    - "ETH 15m 自動化"
-    - "1% 目標 / 0.3% 風控"
-    - "≤6 單/日"
+    - "ETH 15m automation"
+    - "1% target / 0.3% risk control"
+    - "≤6 trades/day"
 acceptance:
   backtest:
     sample_out_winrate: ">=0.70"
     mfe_target: ">=0.01"
     mae_limit: "<=0.003"
     trades_per_day: "<=6"
+
+routing:
+  planner_llm: "gpt-5"
+  dev_llm: "claude-4-sonnet"
+  cost_policy: { prefer: "cheap-first", fallback: "best-quality" }

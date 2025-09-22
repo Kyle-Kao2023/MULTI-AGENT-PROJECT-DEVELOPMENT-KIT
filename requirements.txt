@@ -1,5 +1,27 @@
-langgraph
+langgraph>=0.6,<0.7
 langgraph-checkpoint
-langchain-core
+langchain-core>=0.3,<0.4
 python-dotenv
 PyYAML
+langchain-openai>=0.3,<0.4
+langchain-anthropic>=0.3,<0.4
+pandas
+pytest-cov
+matplotlib
+# For Knowledge Base (Wave 2)
+langchain-community
+faiss-cpu
+sentence-transformers
+
+# For Security & Compliance
+pip-licenses
+# For Schema Validation
+jsonschema
+
+# For Code Quality & Typing
+ruff>=0.5,<0.6
+mypy
+pytest>=8,<9
+
+# For Utilities
+python-slugify

@@ -1,0 +1,33 @@
+project:
+  name: "saas-app-prototype"
+  template: "app_saas"
+  goals:
+    - "Develop a REST API for a simple SaaS application."
+    - "Include user authentication and a single core resource (e.g., 'widgets')."
+    - "Ensure high quality with E2E tests and performance checks."
+
+# --- Acceptance criteria for this template ---
+acceptance:
+  tests:
+    e2e_pass_rate: ">=0.95"
+  performance:
+    lighthouse_score: ">=90"
+  contracts:
+    api_spec_valid: true
+
+# --- AI routing and prompts specific to this template ---
+routing:
+  planner_llm: "gpt-5"
+  dev_llm: "claude-4-sonnet"
+  cost_policy: { prefer: "cheap-first", fallback: "best-quality" }
+
+# --- Dev node prompt override ---
+prompts:
+  dev_node: |
+    You are a full-stack engineer specializing in rapid prototyping with Python. Based on the plan, produce a minimal, runnable API service using FastAPI.
+    - Generate a main `app.py` with basic endpoints.
+    - Create a `models.py` for Pydantic models.
+    - Add a `requirements.txt` with necessary dependencies (fastapi, uvicorn).
+    - Create a simple end-to-end test using `pytest` and `httpx` in a `tests/` folder.
+    - Ensure all code is modern, typed, and follows best practices.
+    - Output in "file change list + code snippets" format.
